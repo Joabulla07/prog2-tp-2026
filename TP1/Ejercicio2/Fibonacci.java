@@ -30,7 +30,7 @@ class Fibonacci {
         StringBuilder serie = new StringBuilder();
 
         if (tamano <= 0) {
-            return "";
+            return this.nombre + ":  ";
         }
 
         int a = 0, b = 1;
