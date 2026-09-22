@@ -37,7 +37,6 @@ public class Producto {
     }
 
     public void actualizarPrecio(double precio) {
-        /*Actua como setter*/
         double actual = this.precio;
         this.precio = precio;
         System.out.println("Precio actualizado de "+this.nombre+": $"+actual+" -> $"+this.precio);
