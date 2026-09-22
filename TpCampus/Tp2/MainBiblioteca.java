@@ -5,18 +5,21 @@ public class MainBiblioteca {
 
         System.out.println("=== Creación de libros ===");
         // new Libro(); // no compila: al declarar constructores propios, el constructor sin parámetros que regalaba el compilador ya no existe
-        
-        System.out.println("\n--- Casos válidos ---");
+
         Libro libro1 = new Libro("El principito", "Antoine de Saint-Exupéry", "978-3-16-148410-0", 3, 20000.0);
         Libro libro2 = new Libro("Cien años de soledad", "Gabriel García Márquez", "978-0-14-018732-4");
         
         System.out.println("\n--- Casos inválidos ---");
         Libro libro3 = new Libro("", "J.K. Rowling", "978-0-7475-3269-9", 5, 25000.0);
+        Libro libro3Null = new Libro(null, "Autor Test", "978-0-7475-3269-9", 5, 25000.0);
         Libro libro4 = new Libro("Harry Potter", "J.K. Rowling", "978-0-7475-3269-9", -5, 25000.0);
         Libro libro5 = new Libro("Don Quijote", "Miguel de Cervantes", "978-0-06-093434-7", 2, 0);
 
         System.out.println("\n=== Demostración de rechazo: título vacío ===");
         System.out.println("Título asignado: " + libro3.getTitulo());
+
+        System.out.println("\n=== Demostración de rechazo: título null ===");
+        System.out.println("Título asignado: " + libro3Null.getTitulo());
 
         System.out.println("\n=== Demostración de rechazo: copias negativas ===");
         System.out.println("Copias asignadas: " + libro4.getCopiasDisponibles());
@@ -50,15 +53,14 @@ public class MainBiblioteca {
         System.out.println("\n=== Devolver libro ===");
         libro1.devolver();
 
-        System.out.println("\n=== Fichas de los libros ===");
-        libro1.mostrarFicha();
-        System.out.println();
-        libro2.mostrarFicha();
-        System.out.println();
-        libro3.mostrarFicha();
-        System.out.println();
-        libro4.mostrarFicha();
-        System.out.println();
-        libro5.mostrarFicha();
+        System.out.println("\n=== Fichas de los libros ===\n");
+
+        Libro[] listaLibros = {libro1, libro2, libro3, libro3Null, libro4, libro5};
+
+        for(Libro items: listaLibros){
+            items.mostrarFicha();
+            System.out.println();
+        }
+
     }
 }
