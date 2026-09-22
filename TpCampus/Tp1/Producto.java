@@ -1,4 +1,4 @@
-package TpCampus;
+package TpCampus.Tp1;
 
 public class Producto {
 
