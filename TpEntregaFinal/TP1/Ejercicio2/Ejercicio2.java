@@ -1,4 +1,4 @@
-package TP1.Ejercicio2;
+package TpEntregaFinal.TP1.Ejercicio2;
 
 
 public class Ejercicio2 {
